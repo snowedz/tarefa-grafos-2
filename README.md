@@ -1,5 +1,11 @@
 # Prática 2 — Grafos para Navegação (Robótica)
 
+## Alunos [Luiz Eduardo Neves de Sousa](https://github.com/snowedz) e [Wictor Oliveira Soares de Lima](https://github.com/WictorSoares6)
+
+Linguagem: Python
+
+Bibliotecas utilizadas: OS, Numpy, Matplotlib, Math e Heapq
+
 Descrição
 ---------
 Este repositório contém uma solução para a "Prática 2 - Grafos para navegação". O objetivo é construir um pipeline para gerar e usar um grafo de visibilidade a partir de mapas com obstáculos, extrair uma árvore (MST) com Kruskal ou Prim, e usar essa árvore para navegação de um robô: localizar o vértice mais próximo a uma posição, buscar caminho entre vértices e plotar o resultado sobre o mapa.
