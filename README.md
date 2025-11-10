@@ -47,11 +47,11 @@ Funções
 
 -------------------------------------------------
 
-Mapa
-(https://github.com/snowedz/tarefa-grafos-2/mapa.png)
+# Mapa<br>
+<img src="mapa.png">
 
-Resultado
-(https://github.com/snowedz/tarefa-grafos-2/saida.png)
+# Resultado<br>
+<img src="saida.png">
 
 
 
