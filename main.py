@@ -8,16 +8,16 @@ import math
 def distancia(p1, p2):
     return math.hypot(p2[0] - p1[0], p2[1] - p1[1])
 
-def orientacao(a,b,c):
+def orientacao(a,b,c): # Comparar se 3 pontos são colineares ou qual direção é feita a curva
     val = (b[1] - a[1]) * (c[0] - b[0]) - (b[0] - a[0]) * (c[1] - b[1])
-    if val == 0:
-        return 0
-    elif val > 0:
-        return 1
+    if val == 0: 
+        return 0 # colineares
+    elif val > 0: 
+        return 1 # curva horária
     else:
-        return 2
+        return 2 # anti-horária
 
-def intersecao(p1, q1, p2, q2):
+def intersecao(p1, q1, p2, q2): # Verifica se p1-q1 cruza p2-q2
     if p1 == p2 or p1 == q2 or q1 == p2 or q1 == q2:
         return False
     
