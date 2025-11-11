@@ -101,32 +101,27 @@ def kruskal(n, arestas):
 def verticeMaisProximo(pos, vertices):
     return min(range(len(vertices)), key=lambda i: distancia(pos, vertices[i]))
 
-# Algoritmo de Djikstra
-def djikstra(n, arestas, inicio, fim):
-    adj = {i: [] for i in range(n)}
-    for u, v, peso in arestas:
-        adj[u].append((v, peso))
-        adj[v].append((u, peso))
-    dist = [float('inf')] * n
-    dist[inicio] = 0
-    prev = [None] * n
-    heap = [(0, inicio)]
-    while heap:
-        d, u = heapq.heappop(heap)
-        if d > dist[u]:
-            continue
-        for v, peso in adj[u]:
-            if dist[u] + peso < dist[v]:
-                dist[v] = dist[u] + peso
-                prev[v] = u
-                heapq.heappush(heap, (dist[v], v))
+# Algoritmo de busca
+def busca_caminho(arvore, inicio, fim):
+    adj = {i: [] for i in range(len(arvore_vertices))}
+    for u, v, _ in arvore:
+        adj[u].append(v)
+        adj[v].append(u)
+    visitado = set()
     caminho = []
-    at = fim
-    while at is not None:
-        caminho.append(at)
-        at = prev[at]
-    caminho.reverse()
-    return caminho if dist[fim] != float('inf') else []
+    def dfs(atual):
+        if atual == fim:
+            caminho.append(atual)
+            return True
+        visitado.add(atual)
+        for vizinho in adj[atual]:
+            if vizinho not in visitado:
+                if dfs(vizinho):
+                    caminho.append(atual)
+                    return True
+        return False
+    dfs(inicio)
+    return list(reversed(caminho))
 
 def plot_mapa(q_start, q_goal, obstaculos):
     plt.figure(figsize=(8, 8))
@@ -173,7 +168,7 @@ arestas = grafo_visibilidade(arvore_vertices, obstaculos)
 arvore = kruskal(len(arvore_vertices), arestas)
 inicio = verticeMaisProximo(q_start, arvore_vertices)
 fim = verticeMaisProximo(q_goal, arvore_vertices)
-caminho = djikstra(len(arvore_vertices), arestas, inicio, fim)
+caminho = busca_caminho(arvore, inicio, fim)
 
 print('Caminho encontrado (índices):', caminho)
 plot_mapa(q_start, q_goal, obstaculos)
