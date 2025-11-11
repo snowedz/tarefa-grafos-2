@@ -6,6 +6,7 @@ Linguagem: Python
 
 Bibliotecas utilizadas: OS, Numpy, Matplotlib, Math e Heapq
 
+
 Descrição
 ---------
 Este repositório contém uma solução para a "Prática 2 - Grafos para navegação". O objetivo é construir um pipeline para gerar e usar um grafo de visibilidade a partir de mapas com obstáculos, extrair uma árvore (MST) com Kruskal ou Prim, e usar essa árvore para navegação de um robô: localizar o vértice mais próximo a uma posição, buscar caminho entre vértices e plotar o resultado sobre o mapa.
@@ -34,7 +35,7 @@ Este repositório contém uma implementação em Python que:
 - constrói o grafo de visibilidade entre os vértices (incluir início, fim e vértices dos obstáculos);
 - gera uma árvore geradora mínima (MST) usando o algoritmo de Kruskal;
 - encontra o vértice mais próximo do início e do objetivo;
-- calcula o caminho mais curto no grafo de visibilidade usando Dijkstra;
+- calcula o caminho no grafo de visibilidade usando MST;
 - plota o resultado e salva uma imagem `saida.png`.
 
 
@@ -47,7 +48,7 @@ Funções
 - `grafo_visibilidade(vertices, obstaculos)` — retorna lista de arestas (u, v, peso) conectando pares visíveis (segmento entre vértices que não intersecta arestas de obstáculo)
 - `kruskal(n, arestas)` — computa MST (lista de arestas) usando estrutura de união/busca
 - `verticeMaisProximo(pos, vertices)` — retorna índice do vértice mais próximo em `vertices`
-- `djikstra(n, arestas, inicio, fim)` — retorna caminho (lista de índices) entre `inicio` e `fim` usando Dijkstra no grafo de visibilidade
+- `busca_caminho(arvore, inicio, fim)` — retorna caminho (lista de índices) entre `inicio` e `fim` usando as arestas da MST no grafo de visibilidade
 - `plotar_mapa` — desenha obstáculos, ponto inicial e ponto final; salva `mapa.png`
 - `plotar(...)` — desenha obstáculos, arestas do grafo, arestas da MST e o caminho final; salva `saida.png` e mostra a figura
 
@@ -58,6 +59,9 @@ Funções
 
 # Resultado<br>
 <img src="saida.png">
+
+
+
 
 
 
