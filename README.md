@@ -42,15 +42,15 @@ Este repositório contém uma implementação em Python que:
 Funções
 -------------------------------------------------
 - `distancia(p1, p2)` — distância euclidiana entre pontos
-- `orientacao(a,b,c)`, `intersecao(p1,q1,p2,q2)` — funções auxiliares para detectar interseção de segmentos (usadas ao gerar arestas do grafo)
-- Leitura de `mapa.txt` — cria `q_start`, `q_goal`, `obstaculos` (lista de polígonos)
-- `arvore_vertices` — lista de vértices usados no grafo: concatena `q_start`, `q_goal` e todos os vértices dos obstáculos (nessa ordem)
-- `grafo_visibilidade(vertices, obstaculos)` — retorna lista de arestas (u, v, peso) conectando pares visíveis (segmento entre vértices que não intersecta arestas de obstáculo)
-- `kruskal(n, arestas)` — computa MST (lista de arestas) usando estrutura de união/busca
-- `verticeMaisProximo(pos, vertices)` — retorna índice do vértice mais próximo em `vertices`
-- `busca_caminho(arvore, inicio, fim)` — retorna caminho (lista de índices) entre `inicio` e `fim` usando as arestas da MST no grafo de visibilidade
-- `plotar_mapa` — desenha obstáculos, ponto inicial e ponto final; salva `mapa.png`
-- `plotar(...)` — desenha obstáculos, arestas do grafo, arestas da MST e o caminho final; salva `saida.png` e mostra a figura
+- `orientacao(a,b,c)`, `intersecao(p1,q1,p2,q2)` — funções auxiliares para detectar interseção de segmentos (usadas ao gerar arestas do grafo).
+- Leitura de `mapa.txt` — cria `q_start`, `q_goal`, `obstaculos` (lista de polígonos).
+- `arvore_vertices` — lista de vértices usados no grafo: concatena `q_start`, `q_goal` e todos os vértices dos obstáculos (nessa ordem).
+- `grafo_visibilidade(vertices, obstaculos)` — retorna lista de arestas (u, v, peso) conectando pares visíveis (segmento entre vértices que não intersecta arestas de obstáculo).
+- `kruskal(n, arestas)` — computa MST (lista de arestas) usando estrutura de união/busca.
+- `verticeMaisProximo(pos, vertices)` — retorna índice do vértice mais próximo em `vertices`.
+- `busca_caminho(arvore, inicio, fim)` — retorna caminho (lista de índices) entre `inicio` e `fim` usando as arestas da MST no grafo de visibilidade.
+- `plotar_mapa` — desenha obstáculos, ponto inicial e ponto final; salva `mapa.png`.
+- `plotar(...)` — desenha obstáculos, arestas do grafo, arestas da MST e o caminho final; salva `saida.png` e mostra a figura.
 
 -------------------------------------------------
 
