@@ -21,6 +21,7 @@ Entre no diretório
 
 Crie um virtual environment
 > python -m virtualenv venv
+
 > source venv/bin/activate
 
 Instale as bilbiotecas
